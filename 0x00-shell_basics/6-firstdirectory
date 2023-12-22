@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+directory_name="my_first_diectory"
+mkdir -p "/tmp/$my_first_diectory"

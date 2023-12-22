@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+html_extension=".html"
+current_directory=$(pwd)
+parent_directory=$(dirname "$current_directory")
+for html_file in "$current_directory"/*"$html_extension"; do
+    base_name=$(basename "$html_file")
+    destination="$parent_directory/$base_name"
+if [ ! -e "$destination" ] || [ "$html_file" -nt "$destination" ]; then
+        cp "$html_file" "$destination"
+        echo "Copied $base_name to $parent_directory"
+    fi
+done
